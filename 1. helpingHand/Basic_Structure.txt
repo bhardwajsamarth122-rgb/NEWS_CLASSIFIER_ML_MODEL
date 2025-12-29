@@ -1,0 +1,79 @@
+Newsenc/
+│
+├── README.md                     # Project overview, usage, setup
+├── requirements.txt              # Python dependencies
+├── setup.py                      # Package configuration
+├── .gitignore
+│
+├── data/                         # DATA (never logic)
+│   ├── raw/
+│   │   └── News_Category_Dataset_v3.json
+│   │
+│   ├── processed/
+│   │   ├── train.csv
+│   │   ├── val.csv
+│   │   └── test.csv
+│   │
+│   └── features/
+│       └── vectorizer.pkl        # Saved TF-IDF / CountVectorizer
+│
+├── notebooks/                    # EXPERIMENTS ONLY
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   └── 04_model_experiments.ipynb
+│
+├── src/                          # CORE PACKAGE (production code)
+│   ├── __init__.py               # Marks src as package
+│   │
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── config.yaml           # Paths, hyperparams, settings
+│   │
+│   ├── ingestion/
+│   │   ├── __init__.py
+│   │   └── data_loader.py        # Load raw → dataframe
+│   │
+│   ├── preprocessing/
+│   │   ├── __init__.py
+│   │   └── text_cleaner.py       # Clean text logic
+│   │
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── vectorizer.py         # TF-IDF fit/transform
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── train.py              # Train model
+│   │   ├── evaluate.py           # Metrics + reports
+│   │   └── predict.py            # Inference logic
+│   │
+│   ├── pipeline/                 # OPTIONAL (advanced but recommended)
+│   │   ├── __init__.py
+│   │   ├── training_pipeline.py
+│   │   └── prediction_pipeline.py
+│   │
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── logger.py             # Logging setup
+│   │   ├── exceptions.py         # Custom exceptions
+│   │   └── helpers.py            # Common helpers
+│
+├── artifacts/                    # GENERATED OUTPUTS
+│   ├── models/
+│   │   └── news_classifier.pkl
+│   │
+│   └── reports/
+│       └── metrics.json
+│
+├── app/                          # DEPLOYMENT
+│   ├── __init__.py
+│   └── main.py                   # FastAPI / Flask entry
+│
+├── tests/                        # TESTING
+│   ├── __init__.py
+│   └── test_pipeline.py
+│
+└── scripts/                      # CLI scripts (optional)
+    ├── train.py
+    └── predict.py

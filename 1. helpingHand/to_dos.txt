@@ -1,0 +1,171 @@
+🪜 STEP-BY-STEP DEVELOPMENT ROADMAP
+🔹 STEP 1: Data Understanding (Notebook)
+
+Notebook: 01_data_understanding.ipynb
+
+Focus:
+
+Dataset size
+
+Category distribution
+
+Missing values
+
+Text length analysis
+
+Key questions:
+
+Class imbalance?
+
+Headline vs description importance?
+
+🔹 STEP 2: Data Cleaning & Preparation
+
+Notebook: 02_data_cleaning.ipynb
+
+Actions:
+
+Merge text features:
+
+headline + short_description
+
+Remove:
+
+HTML
+
+URLs
+
+Punctuation
+
+Stopwords
+
+Lowercasing
+
+Output:
+
+data/processed/train.csv
+data/processed/test.csv
+data/processed/val.csv
+
+
+💡 Keep labels untouched.
+
+🔹 STEP 3: Feature Engineering
+
+Notebook: 03_feature_engineering.ipynb
+
+Industry standard options:
+
+TF-IDF (baseline)
+
+Count Vectorizer (fast)
+
+Word embeddings (optional later)
+
+Output:
+
+Save vectorizer in:
+
+data/features/vectorizer.pkl
+
+
+⚠️ Never retrain vectorizer during inference.
+
+🔹 STEP 4: Model Experimentation
+
+Notebook: 04_model_experiments.ipynb
+
+Try:
+
+Logistic Regression (baseline)
+
+Multinomial Naive Bayes
+
+Linear SVM
+
+Evaluation:
+
+Accuracy
+
+F1-score (macro)
+
+Confusion matrix
+
+Select best model.
+
+🔹 STEP 5: Production Training Pipeline
+
+Script: src/models/train.py
+
+Responsibilities:
+
+Load processed data
+
+Load vectorizer
+
+Train model
+
+Save model to:
+
+artifacts/models/news_classifier.pkl
+
+
+📌 No notebooks here.
+
+🔹 STEP 6: Model Evaluation
+
+Script: src/models/evaluate.py
+
+Output:
+
+Classification report
+
+Store metrics in:
+
+artifacts/reports/metrics.json
+
+🔹 STEP 7: Prediction Pipeline
+
+Script: src/models/predict.py
+
+Input:
+
+Raw text (headline + description)
+
+Output:
+
+Predicted category
+
+This is the core business logic.
+
+🔹 STEP 8: API / Deployment Ready
+
+File: app/main.py
+
+Expose:
+
+POST /predict
+
+
+Payload:
+
+{
+  "headline": "...",
+  "short_description": "..."
+}
+
+
+Response:
+
+{
+  "category": "POLITICS"
+}
+
+📌 IMPORTANT INDUSTRY PRACTICES
+
+✅ Keep notebooks only for experiments
+✅ Move logic into src/
+✅ Save vectorizers & models
+✅ Use config files
+✅ Version datasets
+✅ Never hard-code paths

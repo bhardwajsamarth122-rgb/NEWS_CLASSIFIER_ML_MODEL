@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: NEWS_CATEGRIZATION
+Version: 0.1.0
+Summary: News Category Classification using NLP and ML
+Author: Samarth Bhardwaj
+Requires-Dist: ipykernel
+Requires-Dist: kagglehub
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

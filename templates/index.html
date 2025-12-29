@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Classifier</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/main.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="top-actions">
+        <button class="sample-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <button class="sample-btn" onclick="insertSample('Government announces new economic policy today')">
+            🧪 Sample Text
+        </button>
+    </div>
+
+    <h1>📰 News Categorization</h1>
+
+    <form action="/predict" method="post" onsubmit="showSpinner()">
+        <textarea id="newsText" name="text" placeholder="Paste news text here..." required></textarea>
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="spinner" class="spinner"></div>
+</div>
+</body>
+</html>

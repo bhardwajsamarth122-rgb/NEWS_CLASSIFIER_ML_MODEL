@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/main.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="top-actions">
+        <button class="sample-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <h2>✅ Prediction Result</h2>
+
+    <div class="result-box">
+        <p><strong>Predicted Category</strong></p>
+        <p class="category">{{ prediction }}</p>
+        <p style="text-align:center;">Confidence: {{ confidence }}%</p>
+    </div>
+
+    <div class="result-box">
+        <p><strong>Category Probabilities</strong></p>
+        {% for label, prob in probabilities.items() %}
+            <p>{{ label }} ({{ prob }}%)</p>
+            <div class="bar">
+                <div class="bar-fill" style="width: {{ prob }}%;"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="/" class="sample-btn" style="display:block;text-align:center;">🔁 Try another</a>
+</div>
+</body>
+</html>

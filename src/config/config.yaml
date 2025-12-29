@@ -1,0 +1,9 @@
+data_ingestion:
+  raw_data_path: Data/Raw/News_Category_Dataset_v3.json
+  processed_dir: Data/Processed
+  train_path: Data/Processed/train.csv
+  test_path: Data/Processed/test.csv
+  validation_path: Data/Processed/validation_path.csv
+  test_size: 0.15
+  validation_size: 0.15
+  random_state: 42
