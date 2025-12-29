@@ -4,3 +4,12 @@ pandas
 numpy
 matplotlib
 scikit-learn
+fastapi
+uvicorn
+scikit-learn
+pandas
+numpy
+joblib
+scipy
+jinja2
+python-multipart
