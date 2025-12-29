@@ -1,0 +1,1 @@
+## categorizing the news Data
