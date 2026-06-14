@@ -12,7 +12,7 @@ app = FastAPI(title="News Categorization")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://smart-news-card.lovable.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
